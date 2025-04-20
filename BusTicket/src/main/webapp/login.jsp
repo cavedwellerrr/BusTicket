@@ -33,7 +33,9 @@
 			
 			<button type="submit" class="btn btn-primary w-100 mt-4">Login as Passenger</button>
 			
-			<button type="submit" class="btn btn-primary w-100 mt-4">Login as Staff </button>
+			<a href="staff/staffLogin.jsp">
+				<button type="button" class="btn btn-primary w-100 mt-4">Login as Staff </button>			
+			</a>
 		
 		</form>
 	</div>
