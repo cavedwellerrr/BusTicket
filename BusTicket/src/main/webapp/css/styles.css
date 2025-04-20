@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+body{
+	font-family: 'Segoe UI', sans-seriff;
+	background-color: #fff9f3;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+  background-color:#b6b6b6;
+  padding: 10px 20px;
+}
+
+.nav-link {
+  font-family: 'Segoe UI', sans-seriff;	
+  font-weight: 500;
+  color: #000;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+.navbar-brand i {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+
+.navbar .fa-user {
+  color: #333; /* Account icon color */
+  font-size: 1.5rem; /* Adjust icon size */
+}
+
+.navbar .fa-user:hover {
+  color: #ffffff;  /* Change color on hover */
+}
