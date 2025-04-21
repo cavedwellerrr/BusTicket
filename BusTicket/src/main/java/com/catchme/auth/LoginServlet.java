@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import com.catchme.db.DBconnection;
+import com.catchme.model.Passenger;
 import java.sql.Connection;
 import java.sql.SQLException;
 import javax.servlet.ServletException;
@@ -22,6 +23,9 @@ public class LoginServlet extends HttpServlet {
        
     
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Passenger passenger= new Passenger();
+		passenger.setUsername(request.getParameter("username"));
+		passenger.setPassword(request.getParameter("password"));
 		
 		try {
 			Connection con= DBconnection.getConnection();
@@ -33,23 +37,20 @@ public class LoginServlet extends HttpServlet {
 				System.out.println("Unsuccessful");
 			}
 			
-			String userName= request.getParameter("username");
-			String passWord= request.getParameter("password");
 			
 			PreparedStatement pst= con.prepareStatement("SELECT * FROM passenger WHERE Username=? AND Password=?");
 			
-			pst.setString(1, userName);
-			pst.setString(2, passWord);
+			pst.setString(1, passenger.getUsername());
+			pst.setString(2, passenger.getPassword());
 			
 			ResultSet rs= pst.executeQuery();
 			
 			if(rs.next()) {
 				HttpSession session= request.getSession();
-				session.setAttribute("username", userName);
-				System.out.println("Login success for "+ userName);
+				session.setAttribute("username", passenger.getUsername());
 				response.sendRedirect("account.jsp");
 			}else {
-				System.out.println("Login fail for user: "+ userName);
+				System.out.println("Login fail for user: "+ passenger.getUsername());
 				response.sendRedirect("login.jsp?error=Invalid Username or Password");
 			}
 			
