@@ -24,12 +24,12 @@
         
         <!-- Right: Text Content -->
         <div class="col-md-6">
-          <h1 class="display-4">Welcome to CatchMe</h1>
+          <h1 class="display-4 fw-bold">Welcome to CatchMe</h1>
           <p class="lead">Your online bus ticket reservation site. Book your ticket with us and enjoy your travels !!</p>
           
           <!-- Call to Action Button -->
           <div class="mt-4">
-            <a href="book.jsp" class="btn btn-primary btn-lg">Book Your Ticket Now</a>
+            <a href="book.jsp" class="btn btn-success btn-lg">Book Your Ticket Now</a>
           </div>
         </div>
       </div>
