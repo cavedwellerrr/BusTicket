@@ -24,8 +24,8 @@
         
         <!-- Right: Text Content -->
         <div class="col-md-6">
-          <h1 class="display-4">Welcome to Our Bus Ticket Reservation</h1>
-          <p class="lead">Book your bus tickets online with ease. Explore destinations and make your journey comfortable!</p>
+          <h1 class="display-4">Welcome to CatchMe</h1>
+          <p class="lead">Your online bus ticket reservation site. Book your ticket with us and enjoy your travels !!</p>
           
           <!-- Call to Action Button -->
           <div class="mt-4">
