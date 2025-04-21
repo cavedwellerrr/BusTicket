@@ -24,5 +24,8 @@
 
 %>
 
+<a href="../staffLogout.jsp">Logout</a>
+
+
 </body>
 </html>
