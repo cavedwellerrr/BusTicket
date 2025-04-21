@@ -4,5 +4,5 @@
     session.invalidate();
     
     // Redirect the user to the login page or homepage
-    response.sendRedirect("index.jsp");
+    response.sendRedirect("login.jsp");
 %>

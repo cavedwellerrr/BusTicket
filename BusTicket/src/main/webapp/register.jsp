@@ -26,7 +26,7 @@
 	<div class= "register-container">
 		<h2>Passenger Sign Up</h2>
 		<form action="#" method="post">
-			Name: <input type= "text" name="name" required><br><br>
+			Name: <input type= "text" name="pname" required><br><br>
 			Username: <input type= "text" name="username" required><br><br>
 			Password: <input type= "password" name="password" required><br><br>	
 			Email: <input type= "email" name="email" required><br><br>	

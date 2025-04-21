@@ -14,7 +14,7 @@
 
 
 <!-- css -->
-<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
 </head>
 <body>
 
@@ -25,15 +25,19 @@
 	
 	<div class= "login-container">
 		<h2>Staff Login</h2>
-		<form action="#" method="post">
+		
+		
+		
+		
+		<form action="../StaffLoginServlet" method="post">
 			Username: <input type= "text" name="staffusername" required><br><br>
 			Password: <input type="password" name="staffpassword" required><br><br>	
 			
 			<label for="role">Select Role: </label>
 				<select id="role" name="role" class="form-control">
-				    <option value="admin">Admin</option>
-				    <option value="customer_support">Customer Support</option>
-				    <option value="route_manager">Route Manager</option>
+				    <option value="Admin">Admin</option>
+				    <option value="Customer Support">Customer Support</option>
+				    <option value="Route Manager">Route Manager</option>
 				</select>
 			
 			<button type="submit" class="btn btn-primary w-100 mt-4">Login as Staff Member</button>
