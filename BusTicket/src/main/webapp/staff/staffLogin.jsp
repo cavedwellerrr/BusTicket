@@ -23,10 +23,35 @@
 	</a>
 	
 	
+	
+	
 	<div class= "login-container">
+	
+		<%
+			String logout= request.getParameter("logout");
+			if(logout!=null && logout.equals("success")){
+		%>
+			<div class="alert alert-success" role="alert">
+					Successfully logged out!
+			</div>
+		<%
+			}
+		%>
+		
 		<h2>Staff Login</h2>
 		
 		
+		
+		<%
+			String error = request.getParameter("error");
+			if(error!=null){
+		%>
+			<div class="alert alert-danger" role="alert">
+					Invalid username,password, or role. Please login again!
+			</div>
+		<%
+			}		
+		%>
 		
 		
 		<form action="../StaffLoginServlet" method="post">

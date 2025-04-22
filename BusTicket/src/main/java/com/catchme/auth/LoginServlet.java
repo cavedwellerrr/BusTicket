@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("username", passenger.getUsername());
 				response.sendRedirect("account.jsp");
 			}else {
-				System.out.println("Login fail for user: "+ passenger.getUsername());
+				
 				response.sendRedirect("login.jsp?error=Invalid Username or Password");
 			}
 			

@@ -28,7 +28,7 @@
 	<h2>Welcome, <%= staff.getsUsername() %>!</h2>
 <%
 	}else{
-		response.sendRedirect("../staff/staffLogin.jsp");
+		response.sendRedirect("../staffLogin.jsp");
 	}
 
 %>

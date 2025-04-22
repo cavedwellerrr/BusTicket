@@ -15,8 +15,10 @@
 
     // Redirect to login page
     response.sendRedirect("staffLogin.jsp?logout=success");
+    
+    
 %>
-
+	
 
 </body>
 </html>
