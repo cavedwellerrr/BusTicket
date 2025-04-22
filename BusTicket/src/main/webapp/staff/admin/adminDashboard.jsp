@@ -33,6 +33,7 @@
 
 %>
 
+<h2>Hello</h2>
 
 <a href="../staffLogout.jsp">Logout</a>
 
