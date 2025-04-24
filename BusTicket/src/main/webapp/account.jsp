@@ -1,4 +1,8 @@
-<%@ include file="userdetails.jsp" %>
+<%
+	if(session.getAttribute("username")==null){
+		response.sendRedirect("login.jsp");
+	}
+%>
 <!DOCTYPE html>
 <html>
 <head>
