@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', sans-serif;
+	background-color: #eee9e9;
+}
+
+.navbar{
+	background-color: #606060;
+	position:sticky;
+	top:0;
+	z-index:1000;
+	font-family: Arial, sans-serif;
+	overflow: hidden;
+}
+
+.navbar .nav-link{
+	color: white;
+	font-weight: 500;
+	padding: 0.5rem 1rem;
+	transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+  color: #d3d2d2;
+  transform: scale(1.1);
+  border-radius: 4px;
+  text-decoration: none;
+}
