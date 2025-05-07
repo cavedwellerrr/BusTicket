@@ -10,6 +10,14 @@
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
+<%
+    String updated = request.getParameter("updated");
+%>
+<% if ("true".equals(updated)) { %>
+    <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
+        Account updated successfully!
+    </div>
+<% } %>
 
 <h1>Your Account Details</h1>
 
