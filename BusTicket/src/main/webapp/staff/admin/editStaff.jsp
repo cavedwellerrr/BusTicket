@@ -87,7 +87,8 @@
 	justify-content: center;
 	align-items: flex-start; /* Align form to top */
 	margin-top:0;
-	padding-top: 0;
+	padding-top: 100px;
+	padding-bottom: 50px;
 	min-height: 100vh;       /* Ensure full screen height if content is short */
 	background-color: #f2f2f2;
 	
@@ -96,7 +97,9 @@
 .edit-staff{
 	border: 4px solid #e0e0e0;
 	background-color: #eaeaea;
-	padding: 30px 40px;
+	padding-top: 0px;
+	padding-bottom: 10px;
+	padding-left: 10px;
 	border-radius: 10px;
 	width: 600px;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -153,8 +156,8 @@
 		
 	</a>
 	
-	<form action="#" method="post" class="edit-staff">
-		<h2 style="text-align: center;" class="my-5">Edit Staff Details</h2>
+	<form action="updateStaffServlet" method="post" class="edit-staff">
+		<h2 style="text-align: center;" class="mb-3;">Edit Staff Details</h2>
 		
 		<input type="hidden" name="staff-sID" value="${staff.sID }" required><br><br>
 		
@@ -172,7 +175,7 @@
 		
 		
 		<label for="role" name="role">Role</label><br>
-		<input type="text" name="staff-role" value="${staff.sRole }"required><br><br>
+		<input type="text" name="staff-role" value="${staff.sRole }"readonly><br><br>
   		
 		
 		<label for="phone" name="phone">Phone</label><br>
@@ -181,8 +184,9 @@
 		
 		
 		<button type="submit" name="edit-staff-btn" class="btn btn-success">Submit Changes</button>
+		
 		<button type="reset" class="btn btn-danger">Cancel</button>
-	
+		
 		
 	</form>
 

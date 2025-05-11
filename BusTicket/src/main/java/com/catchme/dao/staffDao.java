@@ -161,5 +161,28 @@ public class staffDao {
 		
 		return updated;
 	}
+	
+	public boolean deleteStaff(int sID) {
+		
+		boolean deleted= false;
+		String query= "delete from staff where sID=?";
+		
+		try (Connection con= DBconnection.getConnection();
+			 PreparedStatement ps= con.prepareStatement(query)){
+			
+			
+			ps.setInt(1, sID);
+			deleted= ps.executeUpdate()>0;
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		return deleted;
+	}
 
 }

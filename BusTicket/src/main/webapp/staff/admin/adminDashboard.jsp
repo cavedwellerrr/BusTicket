@@ -77,7 +77,9 @@
 
         <td>
           	<a href="/BusTicket/editStaffServlet?sID=${s.sID }" class="btn btn-sm btn-primary">Edit</a>
-          	<a href="#" class="btn btn-sm btn-danger">Delete</a>
+          	<a href="/BusTicket/deleteStaffServlet?sID=${s.sID }" class="btn btn-sm btn-danger"
+          	onclick="return confirm('Are you sure you want to delete this staff member?');">
+          	Delete</a>
         </td>
     </tr>
    	
