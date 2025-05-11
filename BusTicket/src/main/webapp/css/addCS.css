@@ -1,9 +1,6 @@
 @charset "UTF-8";
 
-
-@charset "UTF-8";
-
-.add-admin-container{
+.add-cs-container{
 	display: flex;
 	justify-content: center;
 	align-items: flex-start; /* Align form to top */
@@ -13,7 +10,7 @@
 	
 }
 
-.add-admin{
+.add-CS{
 	border: 4px solid #e0e0e0;
 	background-color: #eaeaea;
 	padding: 30px 40px;
@@ -23,7 +20,7 @@
 	
 }
 
-.add-admin input{
+.add-CS input{
 	width: 65%;
 	padding: 8px;
 	margin-botton: 20px;

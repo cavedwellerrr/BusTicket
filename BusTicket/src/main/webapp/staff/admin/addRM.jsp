@@ -1,13 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="com.catchme.model.Staff" %>
+<%@ page import="com.catchme.model.Admin" %>
+<%@ page import="com.catchme.model.RouteManager" %>
+<%@ page import="com.catchme.model.CustomerSupport" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>add RM</title>
+<title>add Route Manager</title>
 
 <!-- css file -->
-<link rel="stylesheet" href="../../css/addAdmin.css">
+<link rel="stylesheet" href="../../css/addRM.css">
 
 
 </head>
@@ -17,10 +23,10 @@
 
 
 
-<div class="add-admin-container">
+<div class="add-rm-container">
 
 	
-	<form action="#" method="post" class="add-admin">
+	<form action="/BusTicket/addRMServlet" method="post" class="add-RM">
 		<h2 style="text-align: center;" class="my-5">Add New Route Manager</h2>
 		
 		<label for="name" name="admin-name-label">Name</label><br>
@@ -35,12 +41,16 @@
 		<label for="password" name="admin-pass-label">Password</label><br>
 		<input type= "text" name="rm-password" required><br><br>
 		
+		<label for="password" name="admin-pass-label">Role</label><br>
+		<input type="text" class="form-control" id="role" value="Route Manager" readonly><br>
+  		<input type="hidden" name="rm-role" value="Route Manager">
+		
 		<label for="phone" name="admin-user-phone">Phone</label><br>
 		<input type= "text" name="rm-phone" required><br><br>
 		
 		
 		
-		<button type="submit" name="add-admin-button" class="btn btn-success">Add Route Manager</button>
+		<button type="submit" name="add-rm-button" class="btn btn-success">Add Route Manager</button>
 		<button type="reset" class="btn btn-danger">Cancel</button>
 	
 	

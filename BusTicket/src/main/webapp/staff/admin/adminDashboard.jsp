@@ -36,7 +36,7 @@
 	Staff staff = (Staff) session.getAttribute("staff");
 
 	if(staff == null){
-		response.sendRedirect("../staffLogin.jsp");
+		response.sendRedirect("/BusTicket/staff/staffLogin.jsp");
 	}
 
 %>
@@ -76,7 +76,7 @@
         
 
         <td>
-          	<a href="#" class="btn btn-sm btn-primary">Edit</a>
+          	<a href="/BusTicket/editStaffServlet?sID=${s.sID }" class="btn btn-sm btn-primary">Edit</a>
           	<a href="#" class="btn btn-sm btn-danger">Delete</a>
         </td>
     </tr>

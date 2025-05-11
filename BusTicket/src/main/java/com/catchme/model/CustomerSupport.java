@@ -7,9 +7,9 @@ public class CustomerSupport extends Staff {
 		
 	}
 	
-	public CustomerSupport(int sID, String sName, String sUsername, String sPassword, String sEmail, 
+	public CustomerSupport(int sID, String sName, String sUsername, String sEmail,String sPassword,  
 			String sPhone) {
-		super(sID, sName, sUsername, sPassword, sEmail, "Customer Support", sPhone);
+		super(sID, sName, sUsername, sEmail, sPassword,  "Customer Support", sPhone);
 		
 	}
 	
