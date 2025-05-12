@@ -7,7 +7,6 @@
     }
 %>
 
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,8 +14,7 @@
     <meta charset="UTF-8">
     <title>Add New Bus</title>
 
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <div class="container mt-5">
@@ -50,6 +48,11 @@
             <div class="mb-3">
                 <label for="route" class="form-label">Route</label>
                 <input type="text" class="form-control" id="route" name="route" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="pricePerSeat" class="form-label">Price per Seat (Rs.)</label>
+                <input type="number" step="0.01" class="form-control" id="pricePerSeat" name="pricePerSeat" required>
             </div>
 
             <div class="text-center">

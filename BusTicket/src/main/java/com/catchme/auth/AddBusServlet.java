@@ -25,12 +25,11 @@ public class AddBusServlet extends HttpServlet {
         Staff staff = (session != null) ? (Staff) session.getAttribute("staff") : null;
 
         if (staff == null) {
-           
             response.sendRedirect(request.getContextPath() + "/staff/staffLogin.jsp");
             return;
         }
 
-        
+     
         Bus bus = new Bus();
         bus.setPlateNo(request.getParameter("plateNo"));
         bus.setSeats(request.getParameter("seats"));
@@ -38,12 +37,13 @@ public class AddBusServlet extends HttpServlet {
         bus.setDeptTime(request.getParameter("deptTime"));
         bus.setArrTime(request.getParameter("arrTime"));
         bus.setRoute(request.getParameter("route"));
+        bus.setPricePerSeat(Double.parseDouble(request.getParameter("pricePerSeat"))); 
 
-        
+      
         BusDAO service = new BusDAO();
         service.Addbus(bus);
 
         
-        response.sendRedirect(request.getContextPath() + "/staff/RM/rmDashboard.jsp");
+        response.sendRedirect(request.getContextPath() + "/ListBusServlet");
     }
 }

@@ -8,11 +8,10 @@ public class Bus {
     private String deptTime;
     private String arrTime;
     private String route;
+    private double pricePerSeat;  
 
-    
     public Bus() {}
 
-    
     public int getBusId() {
         return busId;
     }
@@ -67,5 +66,13 @@ public class Bus {
 
     public void setRoute(String route) {
         this.route = route;
+    }
+
+    public double getPricePerSeat() {
+        return pricePerSeat;
+    }
+
+    public void setPricePerSeat(double pricePerSeat) {
+        this.pricePerSeat = pricePerSeat;
     }
 }

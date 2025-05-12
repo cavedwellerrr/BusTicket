@@ -77,7 +77,7 @@ public class StaffLoginServlet extends HttpServlet {
 					break;
 					
 				case "Route Manager":
-					response.sendRedirect("staff/RM/rmDashboard.jsp");
+					response.sendRedirect("ListBusServlet");
 					break;
 				}
 				
