@@ -5,19 +5,19 @@ public abstract class Staff {
 	protected int sID;
 	protected String sName;
 	protected String sUsername;
-	protected String sPassword;
 	protected String sEmail;
+	protected String sPassword;
 	protected String sRole;
 	protected String sPhone;
 	
 	public Staff() {}
 
-	public Staff(int sID, String sName, String sUsername, String sPassword, String sEmail, String sRole, String sPhone) {
+	public Staff(int sID, String sName, String sUsername, String sEmail, String sPassword,  String sRole, String sPhone) {
 		this.sID= sID;
 		this.sUsername= sUsername;
 		this.sName= sName;
-		this.sPassword= sPassword;
 		this.sEmail= sEmail;
+		this.sPassword= sPassword;
 		this.sRole= sRole;
 		this.sPhone= sPhone;
 	}
@@ -48,6 +48,14 @@ public abstract class Staff {
 	public void setsUsername(String sUsername) {
 		this.sUsername = sUsername;
 	}
+	
+	public String getsEmail() {
+		return sEmail;
+	}
+
+	public void setsEmail(String sEmail) {
+		this.sEmail = sEmail;
+	}
 
 	public String getsPassword() {
 		return sPassword;
@@ -57,13 +65,6 @@ public abstract class Staff {
 		this.sPassword = sPassword;
 	}
 
-	public String getsEmail() {
-		return sEmail;
-	}
-
-	public void setsEmail(String sEmail) {
-		this.sEmail = sEmail;
-	}
 
 	public String getsRole() {
 		return sRole;

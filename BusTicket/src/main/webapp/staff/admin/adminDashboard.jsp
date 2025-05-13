@@ -1,8 +1,15 @@
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 
 
 <%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page import="com.catchme.model.Staff" %>
+<%@ page import="com.catchme.model.Admin" %>
+<%@ page import="com.catchme.model.RouteManager" %>
+<%@ page import="com.catchme.model.CustomerSupport" %>
+
 
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -28,15 +35,14 @@
 <%
 	Staff staff = (Staff) session.getAttribute("staff");
 
-	if(staff != null){
-	
-	}else{
-		response.sendRedirect("../staffLogin.jsp");
+	if(staff == null){
+		response.sendRedirect("/BusTicket/staff/staffLogin.jsp");
 	}
 
 %>
 
 <%@ include file="../staffNavbar.jsp" %>
+
 
 
 
@@ -56,22 +62,37 @@
       </tr>
     </thead>
     <tbody>
-    	
-    	
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+   	
+   	<c:forEach var="s" items="${staffList}">
+   	
+    <tr>
+        <td>${s.sID}</td>
+        <td>${s.sName}</td>
+        <td>${s.sUsername}</td>
+        <td>${s.sEmail}</td>
+        <td>${s.sRole}</td>
+        <td>${s.sPhone}</td>
+            
+        
+
         <td>
-          <a href="#" class="btn btn-sm btn-primary">Edit</a>
-          <a href="#" class="btn btn-sm btn-danger">Delete</a>
+          	<a href="/BusTicket/editStaffServlet?sID=${s.sID }" class="btn btn-sm btn-primary">Edit</a>
+          	<a href="/BusTicket/deleteStaffServlet?sID=${s.sID }" class="btn btn-sm btn-danger"
+          	onclick="return confirm('Are you sure you want to delete this staff member?');">
+          	Delete</a>
         </td>
-      </tr>
+    </tr>
+   	
+ </c:forEach>
+    	
+    	
+    
+    
+   
       
-      
+     
+       
+    
     
     </tbody>
   </table>
