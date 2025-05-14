@@ -24,7 +24,7 @@
 
 %>
 
-<a href="../staffLogout.jsp">Logout</a>
+<a href="${pageContext.request.contextPath}/staff/staffLogout.jsp">Logout</a>
 
 
 </body>
