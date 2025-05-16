@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Register here</title>
 
 <!-- font awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -13,46 +13,33 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <!-- css file -->
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/register.css">
 
 </head>
 <body>
 
-	<a href="index.jsp" class="back">
+	<a href="login.jsp" class="back">
 		<i class="fa-solid fa-arrow-left" ></i>
 	</a>
 	
 	
-	<div class= "login-container">
-		<h2>Passenger Login</h2>
-		
-		<%
-			String error= request.getParameter("error");
-		if(error!=null){
-		%>
-			<div class="alert alert-danger" role="alert">
-				Invalid username or password. Please login again!
-			</div>
-			
-		<%
-			}		
-		%>
-		
-		<form action="LoginServlet" method="post">
+	<div class= "register-container">
+		<h2>Passenger Sign Up</h2>
+		<form action="#" method="post">
+			Name: <input type= "text" name="pname" required><br><br>
 			Username: <input type= "text" name="username" required><br><br>
 			Password: <input type= "password" name="password" required><br><br>	
+			Email: <input type= "email" name="email" required><br><br>	
+			Phone: <input type= "text" name="phone" required><br><br>	
 			
-			<a href="register.jsp">Don't have an account?</a>
 			
-			<button type="submit" class="btn btn-primary w-100 mt-4">Login as Passenger</button>
 			
-			<a href="staff/staffLogin.jsp">
-				<button type="button" class="btn btn-primary w-100 mt-4">Login as Staff </button>			
-			</a>
+			<button type="submit" class="btn btn-primary w-100 mt-4">Register as Passenger</button>
+			
+			
 		
 		</form>
 	</div>
-		
 
 	
 
