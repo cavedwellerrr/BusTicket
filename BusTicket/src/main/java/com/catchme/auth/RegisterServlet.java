@@ -1,4 +1,6 @@
 package com.catchme.auth;
+import com.catchme.util.PasswordUtil;
+
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -47,7 +49,9 @@ public class RegisterServlet extends HttpServlet {
 			passenger.setName(request.getParameter("name"));
 			passenger.setEmail(request.getParameter("email"));
 			passenger.setPhone(request.getParameter("phone"));
-			passenger.setPassword(request.getParameter("password"));
+			String rawPassword = request.getParameter("password");
+			String hashedPassword = PasswordUtil.hashPassword(rawPassword);
+			passenger.setPassword(hashedPassword);
 			
 			try {
 				Connection con = DBconnection.getConnection();

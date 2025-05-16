@@ -1,58 +1,77 @@
+<%@ page import="com.catchme.model.Passenger" %>
+<%
+    Passenger passenger = (Passenger) request.getAttribute("passenger");
+%>
 
-<%@ include file="userdetails.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>UserAccount</title>
 
 <!-- Css link -->
-<link rel="stylesheet" type="text/css" href="css/account.css">
+<link rel="stylesheet" type="text/css" href="css/accountcss.css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<%@ include file="navbar.jsp" %>
-<%
-    String updated = request.getParameter("updated");
-%>
-<% if ("true".equals(updated)) { %>
-    <div style="background-color: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px;">
-        Account updated successfully!
-    </div>
-<% } %>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<% if ("true".equals(request.getParameter("success"))) { %>
+<script>
+Swal.fire({
+  icon: 'success',
+  title: 'Success!',
+  text: 'Your account has been successfully updated!',
+  timer: 3000,
+  showConfirmButton: false
+});
+<% } %>
+</script>
+<div class="navedit"><%@ include file="navbar.jsp" %></div>
+
+
+
+
+<div class="container-fluid register-container">
+<div class="col-md-6 register-img d-none d-md-block"></div>
+
+
+<div class="col-md-6 form-container d-flex flex-column justify-content-center">
+ <div class="register-card">
  <div class="text-center mb-4">
-        <h2>Welcome, <%= username %>!</h2>
+        <h2>Welcome, <%= passenger.getUsername() %>!</h2>
     </div>
-<div class="card mx-auto shadow p-3" style="max-width: 600px;">
-        <h4 class="mb-3 text-center">Your Account Details</h4>
+    
+       <h4 class="mb-3 text-center">Your Account Details</h4>
         <div class="mb-3">
             <label class="form-label fw-bold">User Name</label>
-            <p class="form-control-plaintext"><%= name %></p>
+            <p class="form-control-plaintext"><%= passenger.getName() %></p>
         </div>
         <div class="mb-3">
             <label class="form-label fw-bold">Email</label>
-            <p class="form-control-plaintext"><%= email %></p>
+            <p class="form-control-plaintext"><%= passenger.getEmail() %></p>
         </div>
         <div class="mb-3">
             <label class="form-label fw-bold">Phone</label>
-            <p class="form-control-plaintext"><%= phone %></p>
+            <p class="form-control-plaintext"><%= passenger.getPhone() %></p>
         </div>
 
-        <div class="d-flex justify-content-between mt-4">
+        <div class="d-flex justify-content-between  mx-5 my-5">
             <form action="logout.jsp" method="post">
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
 
-            <form action="editaccount.jsp" method="get">
-                <button type="submit" class="btn btn-primary">Edit Account</button>
+            <form action="PassengerController" method="get">
+            <input type="hidden" name="action" value="edit">
+                <button type="submit" class="btn btn-primary"  >Edit Account</button>
             </form>
-        </div>
+       </div>
  </div>
-<!-- Bootstrap JS Bundle -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
- -->
+</div>
+ </div>
 </body>
 </html>
 

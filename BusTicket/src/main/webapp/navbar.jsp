@@ -56,7 +56,7 @@
     
     
     
-    <a href="account.jsp" class="navbar-brand">
+    <a href="PassengerController" class="navbar-brand">
       <i class="fa-solid fa-user"></i>  <!-- Account Icon -->
     </a>
 

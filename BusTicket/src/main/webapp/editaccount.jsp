@@ -1,39 +1,11 @@
-<%@ page import="java.sql.*" %>
-<%@ include file="userdetails.jsp" %>
-<%@ page import="com.catchme.db.DBconnection" %>
-
+<%@ page import="com.catchme.model.Passenger" %>
 <%
-
-
-    //  Update block
-    if ("POST".equalsIgnoreCase(request.getMethod())) {
-         name = request.getParameter("name");
-         email = request.getParameter("email");
-         phone = request.getParameter("phone");
-
-        try {
-            Connection conn = DBconnection.getConnection();
-            PreparedStatement ps = conn.prepareStatement("UPDATE passenger SET Name=?, Email=?, phone=? WHERE Username=?");
-            ps.setString(1, name);
-            ps.setString(2, email);
-            ps.setString(3, phone);
-            ps.setString(4, username);
-            ps.executeUpdate();
-            ps.close();
-            conn.close();
-
-            response.sendRedirect("account.jsp?updated=true");
-
-            return;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    Passenger passenger = (Passenger) request.getAttribute("passenger");
+    if (passenger == null) {
+        response.sendRedirect("PassengerController");
+        return;
     }
-
-    // Reuse this to load current values
-    request.setAttribute("username", username); // pass username in case not declared in userdetails
-    %>
-
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,25 +24,25 @@
    					 <h2>Edit Your Account </h2>
    				</div>
                   <div class="card-body">
-                    <form method="post" action="editaccount.jsp">
+                    <form method="post" action="PassengerController">
                         <div class="mb-3">
                             <label for="name" class="form-label">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" value="<%= name %>" required>
+                            <input type="text" class="form-control" id="name" name="name" value="<%= passenger.getName() %>" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<%= email %>" required>
+                            <input type="email" class="form-control" id="email" name="email" value="<%= passenger.getEmail() %>" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="phone" class="form-label">Phone:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" value="<%= phone %>" required>
+                            <input type="text" class="form-control" id="phone" name="phone" value="<%= passenger.getPhone() %>" required>
                         </div>
 
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-primary">Save Changes</button>
-                            <a href="account.jsp" class="btn btn-secondary">Cancel</a>
+                            <a href="PassengerController" class="btn btn-secondary">Cancel</a>
                         </div>
                     </form>
                 </div>
