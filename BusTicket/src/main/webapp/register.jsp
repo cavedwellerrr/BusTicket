@@ -25,16 +25,25 @@
 	
 	<div class= "register-container">
 		<h2>Passenger Sign Up</h2>
-		<form action="#" method="post">
-			Name: <input type= "text" name="pname" required><br><br>
-			Username: <input type= "text" name="username" required><br><br>
-			Password: <input type= "password" name="password" required><br><br>	
-			Email: <input type= "email" name="email" required><br><br>	
-			Phone: <input type= "text" name="phone" required><br><br>	
+		<form action="RegisterServlet" method="post">
+
+  			<label>Name:</label>
+  			<input type="text" name="name" required><br>
+  			
+  			<label>Username:</label>
+  			<input type="text" name="username" required><br>
+
+  			<label>Email:</label>
+  			<input type="email" name="email" required><br>
+
+  			<label>Phone:</label>
+  			<input type="text" name="phone" required><br>
+
+ 			 <label>Password:</label>
+ 			 <input type="password" name="password" required><br>
+
 			
-			
-			
-			<button type="submit" class="btn btn-primary w-100 mt-4">Register as Passenger</button>
+			<button type="submit" value="Register" class="btn btn-primary w-100 mt-4">Register as Passenger</button>
 			
 			
 		
