@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.add-rm-container{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start; /* Align form to top */
+	padding-top: 100px;      /* Creates space below navbar */
+	min-height: 100vh;       /* Ensure full screen height if content is short */
+	background-color: #f2f2f2;
+	
+}
+
+.add-RM{
+	border: 4px solid #e0e0e0;
+	background-color: #eaeaea;
+	padding: 30px 40px;
+	border-radius: 10px;
+	width: 600px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+	
+}
+
+.add-RM input{
+	width: 65%;
+	padding: 8px;
+	margin-botton: 20px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0 4px 8px #d3d3d3;
+}

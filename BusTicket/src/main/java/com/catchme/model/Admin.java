@@ -6,9 +6,9 @@ public class Admin extends Staff {
 		this.sRole= "Admin";
 	}
 
-	public Admin(int sID, String sName, String sUsername, String sPassword, String sEmail, 
+	public Admin(int sID, String sName, String sUsername, String sEmail, String sPassword, 
 			String sPhone) {
-		super(sID, sName, sUsername, sPassword, sEmail, "Admin", sPhone);
+		super(sID, sName, sUsername, sEmail, sPassword, "Admin", sPhone);
 		
 	}
 	
