@@ -67,7 +67,7 @@ contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
         <button onclick="location.href='editaccount.jsp'">
           Edit Account Details
         </button>
-        <form action="logout.php" method="post" style="display: inline">
+        <form action="logout.jsp" method="post" style="display: inline">
           <button type="submit">Log Out</button>
         </form>
       </div>
