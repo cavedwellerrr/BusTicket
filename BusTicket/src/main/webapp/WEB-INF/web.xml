@@ -7,4 +7,16 @@
     
     
   </welcome-file-list>
+  
+   <servlet>
+    <servlet-name>adminDashboardServlet</servlet-name>
+    <servlet-class>com.catchme.admin.adminDashboardServlet</servlet-class>
+  </servlet>
+
+	<servlet>
+    <servlet-name>updateStaffServlet</servlet-name>
+    <servlet-class>com.yourpackage.updateStaffServlet</servlet-class>
+	</servlet>
+  
+  
 </web-app>

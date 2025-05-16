@@ -1,3 +1,4 @@
+
 package com.catchme.db;
 
 import java.sql.Connection;
@@ -47,3 +48,4 @@ public class DBconnection {
         return DriverManager.getConnection(url, username, password);
     }
 }
+

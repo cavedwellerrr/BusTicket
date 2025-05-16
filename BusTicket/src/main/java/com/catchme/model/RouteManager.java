@@ -7,9 +7,9 @@ public class RouteManager extends Staff{
 		
 	}
 	
-	public RouteManager(int sID, String sName, String sUsername, String sPassword, String sEmail, 
+	public RouteManager(int sID, String sName, String sUsername,String sEmail, String sPassword,  
 			String sPhone) {
-		super(sID, sName, sUsername, sPassword, sEmail, "Route Manager", sPhone);
+		super(sID, sName, sUsername, sEmail, sPassword,  "Route Manager", sPhone);
 		
 	}
 	

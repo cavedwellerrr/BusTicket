@@ -11,21 +11,27 @@
 </head>
 <body>
 
-<%@ include file="navbar.jsp" %>
 
+
+<video autoplay muted loop class="background-video">
+    <source src="images/215268.mp4" type="video/mp4">
+    
+ </video>
+ 
+ <%@ include file="navbar.jsp" %>
 	<!-- Main Content Section -->
    <section class="main-section d-flex align-items-center">
     <div class="container d-flex align-items-center">
       <div class="row w-100">
         <!-- Left: Bus Image -->
-        <div class="col-md-6">
+       <!--   <div class="col-md-6">
           <img src="images/bus.png" alt="Bus" class="img-fluid">
-        </div>
+        </div>-->
         
         <!-- Right: Text Content -->
         <div class="col-md-6">
           <h1 class="display-4 fw-bold">Welcome to CatchMe</h1>
-          <p class="lead">Your online bus ticket reservation site. Book your ticket with us and enjoy your travels !!</p>
+          <p class="lead">Your online bus ticket reservation site. Book your ticket with us and enjoy your travels!!</p>
           
           <!-- Call to Action Button -->
           <div class="mt-4">
@@ -34,7 +40,8 @@
         </div>
       </div>
     </div>
+   
   </section>
-	
+
 </body>
 </html>

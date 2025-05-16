@@ -11,6 +11,7 @@ import com.catchme.model.Admin;
 import com.catchme.model.CustomerSupport;
 import com.catchme.model.RouteManager;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -69,16 +70,18 @@ public class StaffLoginServlet extends HttpServlet {
 				switch(Role) {
 				
 				case "Admin":
-					response.sendRedirect("staff/admin/adminDashboard.jsp");
+					 response.sendRedirect("adminDashboardServlet");
 					break;
 					
 				case "Customer Support":
 					response.sendRedirect("staff/CS/csDashboard.jsp");
 					break;
 					
+
 				case "Route Manager":
 					response.sendRedirect("ListBusServlet");
 					break;
+
 				}
 				
 			}else {

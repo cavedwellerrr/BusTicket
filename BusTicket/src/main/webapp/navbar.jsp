@@ -13,7 +13,7 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 <!-- main css file -->
-<link rel= "stylesheet" type="text/css" href="./css/styles.css">
+<link rel= "stylesheet" type="text/css" href="css/navbar.css">
 
 </head>
 <body>
@@ -28,11 +28,13 @@
     <a class="navbar-brand" href="index.jsp">
       <i class="fa-solid fa-bus fa-lg" style="color:black;"></i>
     </a>
+    
+  
 
     <!-- Center: Navigation Links -->
     <ul class="nav justify-content-center mx-auto">
       <li class="nav-item">
-        <a class="nav-link active" href="index.jsp">Home</a>
+        <a class="nav-link" href="index.jsp">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="book.jsp">Book</a>
@@ -43,10 +45,16 @@
       <li class="nav-item">
         <a class="nav-link" href="about.jsp">About</a>
       </li>
+     
+      
     </ul>
+    
+   	 
 
     <!-- Right: Empty space or something later -->
     <div style="width: 40px;"></div>
+    
+    
     
     <a href="account.jsp" class="navbar-brand">
       <i class="fa-solid fa-user"></i>  <!-- Account Icon -->
