@@ -39,22 +39,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Account</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    
     <link rel="stylesheet" type="text/css" href="css/account.css">
 </head>
-<body>
-    <h1>Edit Your Account</h1>
-    <form method="post" action="editaccount.jsp">
-        <label>Name:</label><br>
-        <input type="text" name="name" value="<%= name %>" required ><br><br>
+<body class="container py-5">
+ <div class="row justify-content-center">
+        <div class="col-md-7">
+            <div class="card shadow-lg">
+                <div class="card-header bg-dark text-white text-center ">
+   					 <h2>Edit Your Account </h2>
+   				</div>
+                  <div class="card-body">
+                    <form method="post" action="editaccount.jsp">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name" value="<%= name %>" required>
+                        </div>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" value="<%= email %>" required><br><br>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" name="email" value="<%= email %>" required>
+                        </div>
 
-        <label>Phone:</label><br>
-        <input type="text" name="phone" value="<%= phone %>" required ><br><br>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone:</label>
+                            <input type="text" class="form-control" id="phone" name="phone" value="<%= phone %>" required>
+                        </div>
 
-        <button type="submit">Save Changes</button>
-        <a href="account.jsp"><button type="button">Cancel</button></a>
-    </form>
+                        <div class="d-flex justify-content-between">
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                            <a href="account.jsp" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 </body>
 </html>

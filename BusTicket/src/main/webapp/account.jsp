@@ -7,6 +7,8 @@
 
 <!-- Css link -->
 <link rel="stylesheet" type="text/css" href="css/account.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 <%@ include file="navbar.jsp" %>
@@ -19,24 +21,36 @@
     </div>
 <% } %>
 
-<h1>Your Account Details</h1>
+ <div class="text-center mb-4">
+        <h2>Welcome, <%= username %>!</h2>
+    </div>
+<div class="card mx-auto shadow p-3" style="max-width: 600px;">
+        <h4 class="mb-3 text-center">Your Account Details</h4>
+        <div class="mb-3">
+            <label class="form-label fw-bold">User Name</label>
+            <p class="form-control-plaintext"><%= name %></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold">Email</label>
+            <p class="form-control-plaintext"><%= email %></p>
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold">Phone</label>
+            <p class="form-control-plaintext"><%= phone %></p>
+        </div>
 
+        <div class="d-flex justify-content-between mt-4">
+            <form action="logout.jsp" method="post">
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
 
-<h1>Welcome, <%= username %>!</h1>
-<div>
-    <p><strong>User Name</strong><br><%=name %></p>
-    <p><strong>Email</strong><br><%= email %></p>
-    <p><strong>Phone</strong><br><%= phone %></p>
-</div>
-<div style="margin-top: 20px;">
-    <form action="logout.jsp" method="post" style="display:inline;">
-        <button type="submit">Logout</button>
-    </form>
-
-    <form action="editaccount.jsp" method="get" style="display:inline; margin-left:10px;">
-        <button type="submit">Edit Account</button>
-    </form>
-</div>
-
+            <form action="editaccount.jsp" method="get">
+                <button type="submit" class="btn btn-primary">Edit Account</button>
+            </form>
+        </div>
+ </div>
+<!-- Bootstrap JS Bundle -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ -->
 </body>
 </html>
