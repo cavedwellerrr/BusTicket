@@ -42,7 +42,7 @@ public class BusDAO {
                 Bus bus = new Bus();
                 bus.setBusId(rs.getInt("busId"));
                 bus.setPlateNo(rs.getString("plateNo"));
-                bus.setSeats(rs.getString("seats"));
+                bus.setSeats(rs.getInt("seats"));
                 bus.setSeatAvailable(rs.getInt("seat_available"));
                 bus.setDeptTime(rs.getString("dept_time"));
                 bus.setArrTime(rs.getString("arr_time"));
@@ -68,7 +68,7 @@ public class BusDAO {
                 bus = new Bus();
                 bus.setBusId(rs.getInt("busId"));
                 bus.setPlateNo(rs.getString("plateNo"));
-                bus.setSeats(rs.getString("seats"));
+                bus.setSeats(rs.getInt("seats"));
                 bus.setSeatAvailable(rs.getInt("seat_available"));
                 bus.setDeptTime(rs.getString("dept_time"));
                 bus.setArrTime(rs.getString("arr_time"));

@@ -3,7 +3,7 @@ package com.catchme.model;
 public class Bus {
     private int busId;
     private String plateNo;
-    private String seats;
+    private int seats;
     private int seatAvailable;
     private String deptTime;
     private String arrTime;
@@ -28,15 +28,16 @@ public class Bus {
         this.plateNo = plateNo;
     }
 
-    public String getSeats() {
-        return seats;
-    }
 
-    public void setSeats(String seats) {
-        this.seats = seats;
-    }
+    public int getSeats() {
+		return seats;
+	}
 
-    public int getSeatAvailable() {
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+
+	public int getSeatAvailable() {
         return seatAvailable;
     }
 

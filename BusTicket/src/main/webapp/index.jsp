@@ -35,7 +35,7 @@
           
           <!-- Call to Action Button -->
           <div class="mt-4">
-            <a href="book.jsp" class="btn btn-success btn-lg">Book Your Ticket Now</a>
+            <a href="/BusTicket/webBusListServlet" class="btn btn-success btn-lg">Book Your Ticket Now</a>
           </div>
         </div>
       </div>
