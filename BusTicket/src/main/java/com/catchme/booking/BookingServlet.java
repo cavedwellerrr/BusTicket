@@ -14,81 +14,69 @@ public class BookingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String route = request.getParameter("route");
-        String travelDateStr = request.getParameter("travel_date");
-        int seatsRequested = Integer.parseInt(request.getParameter("seats"));
-
-        // Get user from session
-        HttpSession session = request.getSession();
-        String username = (String) session.getAttribute("username");
-        if (username == null) {
-            response.sendRedirect("login.jsp");
-            return;
+        HttpSession session= request.getSession(false);
+        if(session==null || session.getAttribute("username")==null) {
+        	response.sendRedirect("login.jsp");
+        	return;
         }
-
-        try (Connection conn = DBconnection.getConnection()) {
-
-            // Get user ID
-            PreparedStatement getUser = conn.prepareStatement("SELECT pID FROM passenger WHERE Username = ?");
-            getUser.setString(1, username);
-            ResultSet userRs = getUser.executeQuery();
-            if (!userRs.next()) {
-                response.sendRedirect("error.jsp?msg=user_not_found");
-                return;
-            }
-            int userId = userRs.getInt("pID");
-
-            // Get bus for route
-            PreparedStatement getBus = conn.prepareStatement("SELECT * FROM bus WHERE route = ?");
-            getBus.setString(1, route);
-            ResultSet busRs = getBus.executeQuery();
-
-            boolean booked = false;
-
-            while (busRs.next()) {
-                int busId = busRs.getInt("busID");
-                int totalSeats = busRs.getInt("seat_available");
-
-                // Get seats already booked
-                PreparedStatement bookedSeatsStmt = conn.prepareStatement(
-                    "SELECT SUM(seats_booked) FROM booking WHERE bus_id = busId ");
-                  bookedSeatsStmt.setInt(1, busId);
-                  System.out.println("busID: " + busId);
-                //bookedSeatsStmt.setDate(2, Date.valueOf(travelDateStr));
-                ResultSet bookedRs = bookedSeatsStmt.executeQuery();
-
-                int alreadyBooked = 0;
-                if (bookedRs.next()) {
-                    alreadyBooked = bookedRs.getInt("booked");
-                }
-
-                int remaining = totalSeats - alreadyBooked;
-
-               // if (remaining >= seatsRequested) {
-                    // Insert booking
-                    PreparedStatement insertBooking = conn.prepareStatement(
-                        "INSERT INTO booking(user_id, bus_id, travel_date, dept_time, seats_booked) VALUES (?, ?, ?, ?, ?)");
-                    insertBooking.setInt(1, userId);
-                    insertBooking.setInt(2, busId);
-                    insertBooking.setDate(3, Date.valueOf(travelDateStr));
-                    insertBooking.setTime(4, busRs.getTime("dept_time"));
-                    insertBooking.setInt(5, seatsRequested);
-
-                    insertBooking.executeUpdate();
-                    booked = true;
-                    break;
-               // }
-            }
-
-            if (booked==true) {
-                response.sendRedirect("booking_success.jsp");
-            } else {
-                response.sendRedirect("book.jsp?error=not_enough_seats");
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            response.sendRedirect("book.jsp?error=server_error");
+        
+        String username= (String)session.getAttribute("username");
+        
+        try {
+        	Connection con= DBconnection.getConnection();
+        	
+        	int passengerId=0;
+        	PreparedStatement ps1= con.prepareStatement("select pID from passenger where Username=?");
+        	ps1.setString(1, username);
+        	ResultSet rs1 = ps1.executeQuery();
+        	
+        	if(rs1.next()) {
+        		passengerId= rs1.getInt("pID");
+        	}else {
+        		
+        		response.sendRedirect("error.jsp");
+        	}
+        	
+        	int busId= Integer.parseInt(request.getParameter("busID"));
+        	int numSeats= Integer.parseInt(request.getParameter("numSeats"));
+        	String travelDate= request.getParameter("travel_date");
+        	
+        	double pricePerSeat=0;
+        	PreparedStatement ps2= con.prepareStatement("select seat_available, price_per_seat from bus where busID=?");
+        	ps2.setInt(1, busId);
+        	ResultSet rs2= ps2.executeQuery();
+        	
+        	
+        	if(rs2.next()) {
+        		int availableSeats= rs2.getInt("seat_available");
+        		pricePerSeat= rs2.getDouble("price_per_seat");
+        		
+        		if(numSeats> availableSeats) {
+        			session.setAttribute("error", "Not enough seats available");
+        			response.sendRedirect("bookBus.jsp?busId=" + busId);
+        			return;
+        		}
+        		
+        		double totalPrice= numSeats * pricePerSeat;
+        		
+        		session.setAttribute("passengerId", passengerId);
+        		session.setAttribute("busId", busId);
+        		session.setAttribute("numSeats", numSeats);
+        		session.setAttribute("travelDate", travelDate);
+        		session.setAttribute("totalPrice", totalPrice);
+        		
+        		response.sendRedirect("payment.jsp");
+        	}else {
+        		session.setAttribute("error", "Bus not found");
+        		response.sendRedirect("error.jsp");
+        		
+        	}
+        	
+        }catch(Exception e) {
+        	e.printStackTrace();
+        	session.setAttribute("error", "Something went wrong: "+ e.getMessage());
+        	response.sendRedirect("error.jsp");
         }
+        
     }
 }
