@@ -19,13 +19,11 @@ body{
 }
 
 .navbar .nav-link{
-	color: #000000;
-
+	color: #ffffff;
 	font-weight: bold;
 	padding: 1rem 3rem;
 	transition: color 0.3s ease, background-color 0.3s ease;
 }
-
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   color: #d3d2d2;

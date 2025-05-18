@@ -10,8 +10,19 @@
 
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
+<% if ("true".equals(request.getParameter("deleted"))) {%>
+<script>
+Swal.fire({
+	icon:'success',
+	title: 'Acount Deleted',
+	text: 'Your account has been successfully deleted',
+	timer:4000,
+	showConfirmButton : false
+	});
+</script>
+<%}%>
 
 <video autoplay muted loop class="background-video">
     <source src="images/215268.mp4" type="video/mp4">
@@ -37,11 +48,21 @@
           <div class="mt-4">
             <a href="book.jsp" class="btn btn-success btn-lg">Book Your Ticket Now</a>
           </div>
+          
         </div>
+        
       </div>
+      
     </div>
    
   </section>
+ <div style="background-color: rgba(0, 0, 0, 0.5); padding-left: 120px; padding-right: 120px;">
+ <hr  style="color: white;">
+ </div> 
+
+
+<%@ include file="footer.jsp" %>
 
 </body>
+
 </html>

@@ -42,6 +42,20 @@ public class PassengerController extends HttpServlet {
 			response.sendRedirect("login.jsp");
 			return;
 		}
+		
+		String action=request.getParameter("action");
+		
+		if("delete".equals(action)) {
+			boolean deleted=passengerDao.deletePassengerByUserName(username);
+			if(deleted) {
+				session.invalidate();
+				response.sendRedirect("index.jsp?deleted=true");
+
+			}else {
+				response.sendRedirect("about.jsp?error=delete_failed");
+			}
+			return;
+		}
 
 		Passenger updated = new Passenger();
 		updated.setUsername(username);  // Use session value, not string "username"
@@ -59,5 +73,10 @@ public class PassengerController extends HttpServlet {
 			request.setAttribute("passenger", updated); // So form stays filled
 			request.getRequestDispatcher("editaccount.jsp").forward(request, response);
 		}
+		
+		
+		
 	}
+	
+
 }

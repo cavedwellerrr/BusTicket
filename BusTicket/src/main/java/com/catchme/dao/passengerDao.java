@@ -55,6 +55,24 @@ public class passengerDao {
 			}
 			return updated;
 		}
+		
+		public static boolean deletePassengerByUserName(String username) {
+			
+			boolean rowDelete=false;
+			
+			String sql = "DELETE FROM passenger WHERE username = ?";
+			
+			try (Connection conn=DBconnection.getConnection();
+				PreparedStatement pst=conn.prepareStatement(sql)){
+				
+				pst.setString(1, username);
+				rowDelete=pst.executeUpdate()>0;
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return rowDelete;
+			
+		}
 	}
 
 

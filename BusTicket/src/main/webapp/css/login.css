@@ -17,7 +17,7 @@ h2{
 .login-container{
 	padding: 40px 30px;
 	border: 1px solid #e7e7e7;
-	background-color: #e7e7e7;
+	background-color: rgb(255,255,255,0.8);
 	border-radius: 10px;
 	box-shadow: 0px 4px 10px #8b8b8b;
 	max-width: 400px;
@@ -48,4 +48,16 @@ input{
 	padding:5px;
 	margin:  0px;
 	width:100%
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../images/Image May 17, 2025, 11_03_42 PM.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(4px);
+    z-index: -1;
 }

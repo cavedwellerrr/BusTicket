@@ -26,7 +26,7 @@
     
     <!-- Left: Bus Icon -->
     <a class="navbar-brand" href="index.jsp">
-      <i class="fa-solid fa-bus fa-lg" style="color:black;"></i>
+      <i class="fa-solid fa-bus fa-lg" style="color:white;"></i>
     </a>
     
   
@@ -57,7 +57,7 @@
     
     
     <a href="PassengerController" class="navbar-brand">
-      <i class="fa-solid fa-user"></i>  <!-- Account Icon -->
+      <i class="fa-solid fa-user" style="color: white;"></i>  <!-- Account Icon -->
     </a>
 
   </div>
