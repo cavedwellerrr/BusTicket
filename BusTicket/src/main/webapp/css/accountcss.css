@@ -1,0 +1,103 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.register-container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+    .register-card {
+      max-width: 600px;
+      min-height:600px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      min-width:50%;
+      background: #6c6c6c;
+     
+    	
+    }
+    .register-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+    .register-img {
+    background: url('../images/image May 17, 2025, 01_46_12 AM.png') no-repeat center center;
+    background-size: cover;
+    
+
+
+    }
+    .form-container {
+   position: relative;
+    padding: 50px;
+    overflow: hidden;
+    background: rgb(0,0,0,0.7);
+      
+   
+    }
+    .form-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/image May 17, 2025, 01_46_12 AM.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+
+	}
+    .form-label{
+    font-family:sans-serif; 
+    color: #000000;
+    font-variant: small-caps;
+    }
+    .navedit{
+     background-color: #c9c9c9;
+     border-bottom: 1px solid #000000;
+
+    }
+    .wl{
+    color: #ffffff;
+    font-family:cursive;
+    font-style: oblique;
+  
+    }
+    .dt{
+    
+    font-family:cursive;
+    font-style: oblique;
+    }
+    
+    .register-img2 {
+    background: url('../images/image (4).png') no-repeat center center;
+    background-size:cover;
+
+
+    }
+    .crd{
+      max-width: 900px;
+      min-height:500px;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px white;
+      min-width:50%;
+      background: rgb(255,255,255,0.5);
+    }
+    

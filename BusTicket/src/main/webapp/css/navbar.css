@@ -9,7 +9,8 @@ body{
 }
 
 .navbar{
-	background-color: #606060;
+
+	background-color: rgba(0, 0, 0, 0.7);
 	position:sticky;
 	top:0;
 	z-index:1000;
@@ -18,12 +19,11 @@ body{
 }
 
 .navbar .nav-link{
-	color: white;
-	font-weight: 500;
-	padding: 0.5rem 1rem;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 1rem 3rem;
 	transition: color 0.3s ease, background-color 0.3s ease;
 }
-
 .navbar .nav-link:hover,
 .navbar .nav-link:focus {
   color: #d3d2d2;
