@@ -1,2 +1,2 @@
 /build/
-db.config
+src/main/resources/db.config
