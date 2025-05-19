@@ -23,14 +23,15 @@ body{
 
 h2{
 	padding-bottom: 50px;
-	color: white;
+	color: black;
 }
 
 .login-container{
 	padding: 40px 30px;
 	border-left: 1px solid white;
 	animation: fadeInUp 0.6s ease-in-out;
-	background-color:transparent;
+	background-color:rgba(255,255,255,0.2);
+	backdrop-filter:blur(10px);
 	border-radius: 10px;
 	box-shadow: 0px 4px 10px #8b8b8b;
 	max-width: 400px;
@@ -70,6 +71,16 @@ hr{
 	color: #b1b0b0;
 }
 
+a{
+	color: white;
+	text-decoration: none;
+	
+}
+
+a:hover{
+	color: black;
+}
+
 input{
 	border: 2px solid #e7e7e7;
 	border-radius: 8px ;
@@ -84,26 +95,32 @@ body::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background: url('../images/Image May 17, 2025, 11_03_42 PM.png') no-repeat center center;
+    background: url('../images/loginbackground.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(4px);
     z-index: -1;
 }
 
 .btn {
-    background-color: transparent;
+    background-color: rgba(255,255,255,0.2);
     color: white;
-    
+    border:none;
+    outline:none;
     padding: 10px;
     font-weight: bold;
     transition: all 0.3s ease;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* light white glow */
+    box-shadow: none /* light white glow */
 }
 
 .btn:hover {
     background-color: #28a745; /* green background on hover */
     color: white;
     border-color: #28a745;
-    box-shadow: 0 0 12px rgba(40, 167, 69, 0.8); /* green glow on hover */
+    box-shadow: none ;/* green glow on hover */
     cursor: pointer;
+}
+
+.btn:focus{
+	outline:  none;
+	box-shadow: none;
 }
