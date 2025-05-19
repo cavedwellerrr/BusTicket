@@ -12,10 +12,10 @@ import com.catchme.model.Passenger;
 public class PassengerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	// Handles viewing and edit loading
+	// To handle viewing and edit loading
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		String username = (String) session.getAttribute("username");
+		String username = (String) session.getAttribute("username"); //get username from session
 
 		if (username == null) {
 			response.sendRedirect("login.jsp");
@@ -33,7 +33,7 @@ public class PassengerController extends HttpServlet {
 		}
 	}
 
-	// Handles form submission from editaccount.jsp
+	// To handle form submission from editaccount and deleting account
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String username = (String) session.getAttribute("username");
@@ -58,7 +58,7 @@ public class PassengerController extends HttpServlet {
 		}
 
 		Passenger updated = new Passenger();
-		updated.setUsername(username);  // Use session value, not string "username"
+		updated.setUsername(username);  // Use session username value 
 		updated.setName(request.getParameter("name"));
 		updated.setEmail(request.getParameter("email"));
 		updated.setPhone(request.getParameter("phone"));
@@ -70,7 +70,7 @@ public class PassengerController extends HttpServlet {
 			response.sendRedirect("PassengerController?success=true");
 		} else {
 			request.setAttribute("error", "Update Failed!");
-			request.setAttribute("passenger", updated); // So form stays filled
+			request.setAttribute("passenger", updated);
 			request.getRequestDispatcher("editaccount.jsp").forward(request, response);
 		}
 		

@@ -43,12 +43,14 @@ public class RegisterServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+			
 			Passenger passenger = new Passenger();
 			passenger.setUsername(request.getParameter("username"));
 			passenger.setName(request.getParameter("name"));
 			passenger.setEmail(request.getParameter("email"));
 			passenger.setPhone(request.getParameter("phone"));
+			
+			//encrypt password
 			String rawPassword = request.getParameter("password");
 			String hashedPassword = PasswordUtil.hashPassword(rawPassword);
 			passenger.setPassword(hashedPassword);
@@ -67,7 +69,7 @@ public class RegisterServlet extends HttpServlet {
 				}else {
 					// Insert user
 					PreparedStatement pst = con.prepareStatement(
-							"INSERT INTO passenger (Name, Username, Password, Email, phone) VALUES (?, ?, ?, ?, ?)");
+							"INSERT INTO passenger (Name, UsernSme, Password, Email, phone) VALUES (?, ?, ?, ?, ?)");
 					pst.setString(1, passenger.getName());
 					pst.setString(2, passenger.getUsername());
 					pst.setString(3, passenger.getPassword());
