@@ -23,13 +23,20 @@
 <!-- Boostrap js -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
-
-<style>
-	body{
-		overflow-x: hidden;
-	}
+	<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 	
-	body::before {
+<style>
+	body {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+       body::before {
 	content: "";
 	position: fixed;
 	top: 0;
@@ -43,66 +50,30 @@
 	z-index: -1; 
 }
 
-	.book-bus-container{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 100vh;
-		padding: 20px;
-		flex-wrap: wrap;
-	}
-	
-	@keyframes fadeInUp {
-	from {
-		opacity: 0;
-		transform: translateY(30px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
+        .card {
+            text-align: center;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            background-color: #f0eded;
+            opacity: 75%;
+        }
 
-	
-	.payment-form {
-	background-color: transparent; 
-	animation: fadeInUp 0.6s ease-in-out;
-	box-sizing: border-box;
-	padding: 30px;
-	border-radius: 15px;
-	box-shadow: none;
-	max-width:500px;
-	width: 100%;
-	color: white; 
-}
+        .checkmark {
+            font-size: 60px;
+            color: #28a745;
+            opacity: 100%;
+        }
 
-	.payment-form label {
-	color: white;
-}
+        h1 {
+            font-weight: bold;
+            color: black;
+        }
 
-	.payment-form input,
-	.payment-form button {
-		background-color: rgba(255, 255, 255, 0.2);
-		border: 1px solid rgba(255, 255, 255, 0.4);
-		color: white;
-	}
-	
-	.payment-form input::placeholder {
-		color: rgba(255, 255, 255, 0.7);
-	}	
-	
-	.booking-header{
-		border-bottom: 2px solid white;
-		padding-bottom: 10px;
-		margin-bottom: 20px;
-		display: inline-block;
-	}
-	
-	@media (max-width: 600px) {
-    .payment-form {
-        width: 100%;
-        padding: 20px;
-    }
+        .btn-home {
+            margin-top: 20px;
+            opacity: 100%;
+        }
 
 </style>
 
@@ -119,8 +90,31 @@ if (username == null) {
 %>
 
 
-Successful Payment
+<div class="card">
+    <div class="checkmark">✔️</div>
+    <h1>Payment Successful!</h1>
+    <p>Your booking has been confirmed. Thank you for choosing us.</p>
+    <a href="index.jsp" class="btn btn-success btn-home">Go to Dashboard</a>
+</div>
 
+<script>
+window.onload = function () {
+    const duration = 2 * 1000;
+    const animationEnd = Date.now() + duration;
+    const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 1000 };
+
+    const interval = setInterval(function () {
+        const timeLeft = animationEnd - Date.now();
+
+        if (timeLeft <= 0) {
+            return clearInterval(interval);
+        }
+
+        const particleCount = 300 * (timeLeft / duration);
+        confetti(Object.assign({}, defaults, { particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 } }));
+    }, 250);
+};
+</script>
 
 </body>
 </html>

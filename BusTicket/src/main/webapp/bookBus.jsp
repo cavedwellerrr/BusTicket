@@ -220,7 +220,7 @@ if(rs2.next()){
     </div>
 
     <div class="d-flex justify-content-center gap-2 mt-3">
-        <button type="submit" name="book" class="btn btn-success w50">Book Ticket</button>
+        <button type="submit" name="book" class="btn btn-success w50" id="book">Book Ticket</button>
         <a href="/BusTicket/webBusListServlet"><button type="button" name="cancel" class="btn btn-danger w50">Back</button></a>
     </div>
   
@@ -230,6 +230,8 @@ if(rs2.next()){
 
 <!-- javascript to update seat count and total price in real time -->
 <script>
+
+	
 	const pricePerSeat= <%= pricePerSeat %>;
 	const originalAvailableSeats= <%= seatAvailable%>;
 	
