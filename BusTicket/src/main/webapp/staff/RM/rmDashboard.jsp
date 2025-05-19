@@ -53,7 +53,7 @@
                 <td>Rs.<%= String.format("%.2f", bus.getPricePerSeat()) %></td> 
                 <td> 
                     <a href="<%= request.getContextPath() %>/staff/RM/editbus.jsp?busId=<%= bus.getBusId() %>" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="<%= request.getContextPath() %>/DeleteBusServlet?busId=<%= bus.getBusId() %>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="<%= request.getContextPath() %>/DeleteBusServlet?busId=<%= bus.getBusId() %>"  class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
             <%

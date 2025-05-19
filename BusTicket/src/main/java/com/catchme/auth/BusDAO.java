@@ -1,6 +1,7 @@
 package com.catchme.auth;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -103,9 +104,11 @@ public class BusDAO {
     
     public void deleteBus(int busId) {
         try {
-            String query = "DELETE FROM bus WHERE busId = " + busId;
-            Statement stmt = DBconnection.getConnection().createStatement();
-            stmt.executeUpdate(query);
+        	
+            String query = "DELETE FROM bus WHERE busId = ?" ;
+            PreparedStatement stmt= DBconnection.getConnection().prepareStatement(query);
+            stmt.setInt(1, busId);
+            stmt.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
         }
