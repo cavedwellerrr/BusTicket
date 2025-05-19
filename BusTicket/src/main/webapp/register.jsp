@@ -22,9 +22,9 @@
 	<a href="login.jsp" class="back">
 		<i class="fa-solid fa-arrow-left" ></i>
 	</a>
-<div class="reg">
+
 	<div class= "register-container">
-	<div class= "register-container1">
+	
 		<h2>Passenger Sign Up</h2>
 		<form action="RegisterServlet" method="post">
 
@@ -49,11 +49,11 @@
 			
 		
 		</form>
-		</div>
+		
 		</div>
 		
-		<div class="register-img"></div>
 		
-		</div>	
+		
+		
 </body>
 </html>

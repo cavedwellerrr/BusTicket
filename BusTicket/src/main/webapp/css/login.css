@@ -10,14 +10,28 @@ body{
 	background-color: #fff9f3;
 }
 
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 h2{
 	padding-bottom: 50px;
+	color: black;
 }
 
 .login-container{
 	padding: 40px 30px;
-	border: 1px solid #e7e7e7;
-	background-color: rgb(255,255,255,0.8);
+	border-left: 1px solid white;
+	animation: fadeInUp 0.6s ease-in-out;
+	background-color:rgba(255,255,255,0.2);
+	backdrop-filter:blur(10px);
 	border-radius: 10px;
 	box-shadow: 0px 4px 10px #8b8b8b;
 	max-width: 400px;
@@ -29,17 +43,42 @@ h2{
 	align-items: stretch;
 }
 
+.login-container form{
+	color: white;
+	
+}
+
+h2{
+	margin-bottom: 0.3rem;
+}
+
+hr{
+	margin-top: 0.2rem;
+	margin-bottom: 1rem;
+	border: 1px solid white;
+}
+
 .back{
 	position:absolute;
 	top: 20px;
     left: 20px;
     font-size: 24px;
-    color: black;
+    color:white;
     text-decoration: none;
 }
 
 .back:hover{
 	color: #b1b0b0;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+	
+}
+
+a:hover{
+	color: black;
 }
 
 input{
@@ -56,8 +95,32 @@ body::before {
     left: 0;
     height: 100%;
     width: 100%;
-    background: url('../images/Image May 17, 2025, 11_03_42 PM.png') no-repeat center center;
+    background: url('../images/loginbackground.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(4px);
     z-index: -1;
+}
+
+.btn {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    border:none;
+    outline:none;
+    padding: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: none /* light white glow */
+}
+
+.btn:hover {
+    background-color: #28a745; /* green background on hover */
+    color: white;
+    border-color: #28a745;
+    box-shadow: none ;/* green glow on hover */
+    cursor: pointer;
+}
+
+.btn:focus{
+	outline:  none;
+	box-shadow: none;
 }
