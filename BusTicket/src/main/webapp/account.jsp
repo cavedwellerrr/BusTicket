@@ -10,13 +10,15 @@
 <meta charset="UTF-8">
 <title>UserAccount</title>
 
-
+<!-- link accountcss.css file -->
 <link rel="stylesheet" type="text/css" href="css/accountcss.css">
 
+<!-- link bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- link sweetalert to get success massage -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <% if ("true".equals(request.getParameter("success"))) { %>
@@ -32,8 +34,10 @@ Swal.fire({
 
 </script>
 
-
+<!-- link navbar -->
 <div class="navedit"><%@ include file="navbar.jsp" %></div>
+
+
 <div class="container-fluid register-container">
 <div class="row g-0 w-100">
 <div class="col-md-6 register-img d-none d-md-block"></div>

@@ -25,8 +25,9 @@ public class LoginServlet extends HttpServlet {
 
 		// Hash password
 		String hashedPassword = PasswordUtil.hashPassword(rawPassword);
-
-		System.out.println("Submitted username: " + username);
+		
+		//to see details in console(to check password when it has error)
+		System.out.println("Submitted username: " + username); 
 		System.out.println("Submitted raw password: " + rawPassword);
 		System.out.println("Submitted hashed password: " + hashedPassword);
 
@@ -43,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 
 			if (rs.next()) {
 				String dbPassword = rs.getString("Password");
-				System.out.println("Password in DB: " + dbPassword);
+				
 
 				if (hashedPassword.equals(dbPassword)) {
 					HttpSession session = request.getSession();

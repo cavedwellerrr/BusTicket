@@ -18,7 +18,10 @@ public class passengerDao {
 				ResultSet rs=ps.executeQuery();
 				
 				if(rs.next()) {
+					//create passenger objct
 					passenger = new Passenger();
+					
+					//asign values to object
 					passenger.setPassengerID(rs.getInt("pID"));
 					passenger.setName(rs.getString("Name"));
 					passenger.setUsername(rs.getString("Username"));

@@ -5,11 +5,16 @@
 <head>
 <meta charset="UTF-8">
 <title>About Us</title>
+
+<!-- Link Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Link about.css file -->
 <link href="css/about.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Link Navbar -->
 <%@ include file="navbar.jsp" %>
 
 <div class="container py-5">
@@ -34,7 +39,11 @@
 	</div>
 
 </div>
+
+<!-- Link footer file -->
 <%@ include file="footer.jsp" %>
+
+<!-- Link slideshow.js file -->
 <script src="js/slidshow.js"></script>
 <script>
 	const images=["images/aboutpge img/pngwing.com (3).png",
@@ -43,6 +52,8 @@
 		"images/aboutpge img/pngegg.png",
 		"images/aboutpge img/pngegg (1).png"
 		];
+	
+	<!--call the funcion-->
 	startslidshow("slideshow-img",images);
 </script>
 

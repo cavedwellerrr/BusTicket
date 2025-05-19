@@ -33,7 +33,7 @@
     
   
 
-    <!-- Center: Navigation Links -->
+    <!-- Navigation Links -->
     <ul class="nav justify-content-center mx-auto">
       <li class="nav-item">
         <a class="nav-link" href="index.jsp">Home</a>
@@ -53,7 +53,7 @@
     
    	 
 
-    <!-- Right: Empty space or something later -->
+    <!-- Empty space -->
     <div style="width: 40px;"></div>
     
     

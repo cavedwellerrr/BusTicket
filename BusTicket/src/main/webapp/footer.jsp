@@ -6,7 +6,10 @@
 <meta charset="UTF-8">
 <title>Footer</title>
 
+<!-- Link Bootstrap -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!-- Link footer css -->
 <link rel="stylesheet" href="css/footer.css">
 </head>
 <body>
@@ -37,11 +40,11 @@
 		<hr class="mb-4">
 		
 		<div class="text-center mt-3">
-  <p class="mb-0">
-    <i class="fas fa-copyright"></i>
-    2025 CatchMe Bus System. All rights reserved.
-  </p>
-</div>
+  		<p class="mb-0">
+   		 <i class="fas fa-copyright"></i>
+   			 2025 CatchMe Bus System. All rights reserved.
+			  </p>
+		</div>
 	
 	</div>
 
