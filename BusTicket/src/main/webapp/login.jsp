@@ -25,6 +25,7 @@
 	
 	<div class= "login-container">
 		<h2>Passenger Login</h2>
+		<hr>
 		
 		<%
 			String error= request.getParameter("error");
@@ -44,10 +45,10 @@
 			
 			<a href="register.jsp">Don't have an account?</a>
 			
-			<button type="submit" class="btn btn-primary w-100 mt-4">Login as Passenger</button>
+			<button type="submit" class="btn btn-primary w-100 mt-4" class="passenger">Login as Passenger</button>
 			
 			<a href="staff/staffLogin.jsp">
-				<button type="button" class="btn btn-primary w-100 mt-4">Login as Staff </button>			
+				<button type="button" class="btn btn-primary w-100 mt-4" class="staff">Login as Staff </button>			
 			</a>
 		
 		</form>
