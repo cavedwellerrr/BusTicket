@@ -30,6 +30,7 @@
 <%@ include file="navbar.jsp" %>
 
 
+
 <div class="container mt-5" style="max-width: 1300px;">
   <h2 class=" mb-4">Available Buses </h2>
   <table class="table table-bordered table-hover">
@@ -63,10 +64,11 @@
           	
         </td>
     </tr>
+  
    	
  </c:forEach>
     	
-
+ 	
 
 
 </body>
