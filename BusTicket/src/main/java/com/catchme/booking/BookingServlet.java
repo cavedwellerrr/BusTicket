@@ -33,15 +33,20 @@ public class BookingServlet extends HttpServlet {
         	if(rs1.next()) {
         		passengerId= rs1.getInt("pID");
         	}else {
-        		
+        		session.setAttribute("error", "Passenger not found");
         		response.sendRedirect("error.jsp");
+        		return;
         	}
         	
         	int busId= Integer.parseInt(request.getParameter("busID"));
         	int numSeats= Integer.parseInt(request.getParameter("numSeats"));
         	String travelDate= request.getParameter("travel_date");
         	
+        	
+        	
+        	
         	double pricePerSeat=0;
+        	
         	PreparedStatement ps2= con.prepareStatement("select seat_available, price_per_seat from bus where busID=?");
         	ps2.setInt(1, busId);
         	ResultSet rs2= ps2.executeQuery();
@@ -57,20 +62,39 @@ public class BookingServlet extends HttpServlet {
         			return;
         		}
         		
-        		double totalPrice= numSeats * pricePerSeat;
+        		int newAvailableSeats= availableSeats- numSeats;
+        		PreparedStatement ps3= con.prepareStatement("update bus set seat_available=? where busID=?");
+        		ps3.setInt(1, newAvailableSeats);
+        		ps3.setInt(2, busId);
+        		ps3.executeUpdate();
         		
-        		session.setAttribute("passengerId", passengerId);
-        		session.setAttribute("busId", busId);
-        		session.setAttribute("numSeats", numSeats);
-        		session.setAttribute("travelDate", travelDate);
-        		session.setAttribute("totalPrice", totalPrice);
         		
-        		response.sendRedirect("payment.jsp");
+        		
         	}else {
         		session.setAttribute("error", "Bus not found");
         		response.sendRedirect("error.jsp");
         		
         	}
+        	
+        	double totalPrice= numSeats * pricePerSeat;
+        	
+        	PreparedStatement ps4= con.prepareStatement("insert into booking(passenger_id, bus_id, num_seats, total_price, booking_date) values(?,?,?,?,?)");
+        	ps4.setInt(1, passengerId);
+        	ps4.setInt(2, busId);
+        	ps4.setInt(3, numSeats);
+        	ps4.setDouble(4, totalPrice);
+        	ps4.setString(5, travelDate);
+        	
+        	int rowsInserted= ps4.executeUpdate();
+        	
+        	if(rowsInserted>0) {
+        		session.setAttribute("success", "Booking successful");
+        		response.sendRedirect("payment.jsp");
+        	}else {
+        		session.setAttribute("error", "Failed to book ticket");
+        		response.sendRedirect("bookBus.jsp?busId="+ busId);
+        	}
+        	
         	
         }catch(Exception e) {
         	e.printStackTrace();
