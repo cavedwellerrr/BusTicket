@@ -90,7 +90,7 @@
 
 	
 	.booking-form {
-	background-color: transparent; 
+	background-color:transparent;
 	animation: fadeInUp 0.6s ease-in-out;
 	box-sizing: border-box;
 	padding: 30px;
@@ -127,6 +127,14 @@
     .booking-form {
         width: 100%;
         padding: 20px;
+    }
+    
+    .form-text{
+    color:white;
+    }
+    
+    #availableSeats{
+    	color:white;
     }
 
 </style>
@@ -188,7 +196,7 @@ if(rs2.next()){
 
 		<hr class="my-4">
 		
-		<h5 class="mb-3 " style="color: #b1b1b1; font-weight: 10px; ">Please fill out these details</h5>
+		<h5 class="mb-3 " style="color: white; font-weight: 10px; ">Please fill out these details</h5>
 		
         <div class="mb-3 col-md-6" >
             <label >Travel Date</label>
@@ -198,8 +206,8 @@ if(rs2.next()){
         <div class="mb-3 col-md-6">
             <label>Number of Seats</label>
             <input type="number" name="numSeats" id="numSeats" min="1" max="<%= seatAvailable %>" required class="form-control"/>
-            <small class="form-text text-muted">
-            	Available seats: <span id="availableSeats"><%= seatAvailable %></span>
+            <small class="form-text" style="color: white;" >Available seats: 
+            	<span id="availableSeats"  style="color: white;"><%= seatAvailable %></span>
             </small>
         </div>
         
