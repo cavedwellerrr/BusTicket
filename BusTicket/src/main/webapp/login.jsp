@@ -39,8 +39,8 @@
 		%>
 		
 		<form action="LoginServlet" method="post">
-			Username: <input type= "text" name="username" required><br><br>
-			Password: <input type= "password" name="password" required><br><br>	
+			<label>Username:</label> <input type= "text" name="username" required><br><br>
+			<label>Password:</label> <input type= "password" name="password" required><br><br>	
 			
 			<a href="register.jsp">Don't have an account?</a>
 			
