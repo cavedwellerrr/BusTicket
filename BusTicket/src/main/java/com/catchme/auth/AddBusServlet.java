@@ -32,7 +32,7 @@ public class AddBusServlet extends HttpServlet {
      
         Bus bus = new Bus();
         bus.setPlateNo(request.getParameter("plateNo"));
-        bus.setSeats(request.getParameter("seats"));
+        bus.setSeats(Integer.parseInt(request.getParameter("seats")));
         bus.setSeatAvailable(Integer.parseInt(request.getParameter("seatAvailable")));
         bus.setDeptTime(request.getParameter("deptTime"));
         bus.setArrTime(request.getParameter("arrTime"));

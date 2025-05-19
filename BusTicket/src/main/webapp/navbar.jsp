@@ -37,7 +37,7 @@
         <a class="nav-link" href="index.jsp">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="book.jsp">Book</a>
+        <a class="nav-link" href="/BusTicket/webBusListServlet">Book</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="contactUs.jsp">Contact Us</a>
