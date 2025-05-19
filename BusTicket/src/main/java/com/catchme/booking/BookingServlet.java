@@ -75,7 +75,7 @@ public class BookingServlet extends HttpServlet {
         }catch(Exception e) {
         	e.printStackTrace();
         	session.setAttribute("error", "Something went wrong: "+ e.getMessage());
-        	response.sendRedirect("error.jsp");
+        	response.sendRedirect(username);
         }
         
     }

@@ -74,7 +74,7 @@
 		align-items: center;
 		min-height: 100vh;
 		padding: 20px;
-		flex-wrap: wrap;
+		
 	}
 	
 	@keyframes fadeInUp {
@@ -197,8 +197,25 @@ if(rs2.next()){
 
         <div class="mb-3 col-md-6">
             <label>Number of Seats</label>
-            <input type="number" name="numSeats" min="1" max="<%= seatAvailable %>" required class="form-control"/>
-            <small class="form-text text-muted">Available seats: <%= seatAvailable %></small>
+            <input type="number" name="numSeats" id="numSeats" min="1" max="<%= seatAvailable %>" required class="form-control"/>
+            <small class="form-text text-muted">
+            	Available seats: <span id="availableSeats"><%= seatAvailable %></span>
+            </small>
+        </div>
+        
+        <div class="mb-3 col-md-6" >
+            <label >Card Number</label>
+            <input type="text" name="card" required class="form-control" style="cursor: pointer;"/>
+        </div>
+        
+        <div class="mb-3 col-md-6" >
+            <label >CVC </label>
+            <input type="text" name="cvc" required class="form-control" style="cursor: pointer;"/>
+        </div>
+        
+        <div class="mb-3 col-md-6" >
+            <label >Total Price</label>
+            <input type="text" name="total" id="total"  required class="form-control" style="cursor: pointer;"/>
         </div>
     </div>
 
@@ -211,6 +228,35 @@ if(rs2.next()){
 
 </div>
 
+<!-- javascript to update seat count and total price in real time -->
+<script>
+	const pricePerSeat= <%= pricePerSeat %>;
+	const originalAvailableSeats= <%= seatAvailable%>;
+	
+	const numSeatsInput= document.getElementById('numSeats');
+	const totalPriceInput= document.getElementById('total');
+	const availableSeatsSpan= document.getElementById('availableSeats');
+	
+	function updateTotal(){
+		let seats= parseInt(numSeatsInput.value);
+		if(isNaN(seats) || seats<1){
+			seats=1;
+			numSeatsInput.value= seats;
+		}
+	
+		const total= (seats* pricePerSeat).toFixed(2);
+		totalPriceInput.value="Rs. "+ total;
+		
+		const updatedSeats= originalAvailableSeats - seats;
+		availableSeatsSpan.textContent= updatedSeats >= 0 ? updatedSeats: 0;
+		
+	}
+	
+	numSeatsInput.addEventListener('input', updateTotal);
+	
+	updateTotal();
+
+</script>
 
 
 </body>
