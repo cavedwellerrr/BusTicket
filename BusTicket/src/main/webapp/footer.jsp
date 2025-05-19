@@ -22,7 +22,7 @@
 			<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
 			<h5 class="text-uppercase mb-4 font-weight-bold ">Quick List</h5>
 			<p class="a"><a href="index.jsp" class="text-light" style="text-decoration : none;">Home</a></p>
-			<p class="a"><a href="book.jsp" class="text-light" style="text-decoration : none;">Booking</a></p>
+			<p class="a"><a href="/BusTicket/webBusListServlet" class="text-light" style="text-decoration : none;">Booking</a></p>
 			<p class="a" ><a href="about.jsp" class="text-light" style="text-decoration : none;">About Us</a></p>
 			<p class="a"><a href="contactUs.jsp" class="text-light" style="text-decoration : none;">Contact Us</a></p>
 			</div>
